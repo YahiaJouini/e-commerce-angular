@@ -1,14 +1,16 @@
-import express, { Express, Request, Response } from "express"
-import dotenv from "dotenv"
+import express from "express"
+import pool from "./connexion"
+import { productRoutes } from "./routes/product-routes"
 
-dotenv.config()
+pool
+   .getConnection()
+   .then(() => console.log("Database connected"))
+   .catch((err) => console.error("Database connection error:", err))
 
-const app: Express = express()
-const port = process.env.PORT || 3000
+const app = express()
+const port = 3000
 
-app.get("/", (req: Request, res: Response) => {
-   res.send("Express + TypeScript Server")
-})
+productRoutes(app)
 
 app.listen(port, () => {
    console.log(`[server]: Server is running at http://localhost:${port}`)
