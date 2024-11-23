@@ -7,7 +7,9 @@
       "build": "npx tsc",
       "start": "node dist/server.js",
       "dev": "nodemon src/server.ts",
-      "lint": "eslint"
+      "lint": "eslint",
+      "create-tables": "node config/createTables.js",
+      "insert-products": "node config/insertProducts.js"
    },
    "author": "",
    "license": "ISC",

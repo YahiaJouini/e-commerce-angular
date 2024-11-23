@@ -12,6 +12,7 @@ const pool = mysql
 
 pool
    .getConnection()
-   .then(() => console.log("Database connected"))
-   .catch((err: any) => console.error("Database connection error:", err))
+   .then(() => console.log("Database pool created successfully."))
+   .catch((err) => console.error("Error creating database pool:", err))
+
 export default pool

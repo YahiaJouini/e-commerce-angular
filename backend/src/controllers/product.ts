@@ -14,7 +14,7 @@ type Product = RowDataPacket & {
 
 const getProducts = async (_: Request, res: Response) => {
    try {
-      const [rows] = await pool.query<Product[]>("SELECT * FROM produit")
+      const [rows] = await pool.query<Product[]>("SELECT * FROM product")
       res.json(rows)
    } catch (error) {
       console.error("Error fetching products:", error)
