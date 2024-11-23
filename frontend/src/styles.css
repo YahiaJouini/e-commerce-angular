@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .wrapper {
+        @apply w-[80%] mx-auto;
+    }
+
+    .center {
+        @apply flex justify-center items-center;
+    }
+
+    .align-y {
+        @apply flex items-center gap-4;
+    }
+}
