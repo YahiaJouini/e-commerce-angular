@@ -1,0 +1,51 @@
+<div class="w-full flex flex-col gap-7 items-center">
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+      <div
+         *ngFor="let product of productList"
+         class="bg-white rounded-lg shadow-md overflow-hidden"
+      >
+         <div class="relative aspect-video w-full">
+            <img
+               [src]="product.image"
+               [alt]="product.libelle"
+               class="w-full h-full object-cover"
+            />
+            <div
+               *ngIf="product.promo === 1"
+               class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-semibold"
+            >
+               Promo
+            </div>
+         </div>
+
+         <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+               {{ product.libelle }}
+            </h3>
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+               {{ product.des }}
+            </p>
+
+            <div class="flex justify-between items-center">
+               <span class="text-lg font-bold text-emerald-600"
+                  >{{ product.prix }}€</span
+               >
+               <span
+                  [class]="product.qte > 0 ? 'text-green-600' : 'text-red-500'"
+                  class="text-sm"
+               >
+                  {{ product.qte > 0 ? "In Stock" : "Out of Stock" }}
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <a
+      *ngIf="this.limit"
+      routerLink="/produits"
+      class="mx-auto w-fit px-8 font-medium py-2 bg-slate-800 text-white rounded-full"
+   >
+      Voir tous les produits
+   </a>
+</div>

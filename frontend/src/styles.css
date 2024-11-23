@@ -1,18 +1,22 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
-    .wrapper {
-        @apply w-[80%] mx-auto;
-    }
+   .wrapper {
+      @apply w-[80%] mx-auto;
+   }
 
-    .center {
-        @apply flex justify-center items-center;
-    }
+   .center {
+      @apply flex justify-center items-center;
+   }
 
-    .align-y {
-        @apply flex items-center gap-4;
-    }
+   .align-y {
+      @apply flex items-center gap-4;
+   }
+
+   .link {
+      @apply text-gray-200 hover:text-white font-medium;
+   }
 }

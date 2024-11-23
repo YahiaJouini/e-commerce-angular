@@ -1,16 +1,50 @@
-<div class="py-10 bg-slate-700 text-white">
-   <div class="wrapper flex items-center justify-between">
-      <div class="align-y">
-         <h1 class="font-bold text-2xl mr-10">LOGO</h1>
-         <a routerLink="/" routerLinkActive="active">Home</a>
-         <a routerLink="/about" routerLinkActive="active">About</a>
-         <a routerLink="/contact" routerLinkActive="active">Contact</a>
-      </div>
+<div class="bg-slate-800 text-gray-100 py-5 shadow-lg">
+   <div class="wrapper">
+      <div class="flex items-center justify-between">
+         <div class="align-y">
+            <h1 class="text-2xl font-bold text-white mr-10">LOGO</h1>
 
-      <div class="align-y">
-         <a routerLink="/login" routerLinkActive="active">Login</a>
-         <a routerLink="/register" routerLinkActive="active">Register</a>
-         <a routerLink="/cart" routerLinkActive="active">Cart</a>
+            <div class="align-y">
+               <a routerLink="/" routerLinkActive="text-white" class="link">
+                  Accueil
+               </a>
+               <a
+                  routerLink="/apropos"
+                  routerLinkActive="text-white"
+                  class="link"
+               >
+                  About
+               </a>
+               <a
+                  routerLink="/contact"
+                  routerLinkActive="text-white"
+                  class="link"
+               >
+                  Contact
+               </a>
+            </div>
+         </div>
+
+         <div class="align-y">
+            <a routerLink="/login" routerLinkActive="text-white" class="link">
+               Se connecter
+            </a>
+            <a
+               routerLink="/register"
+               routerLinkActive="bg-blue-700"
+               class="link"
+            >
+               S'inscrire
+            </a>
+            <a
+               routerLink="/cart"
+               routerLinkActive="text-white"
+               class="link !gap-1"
+            >
+               <i class="fas fa-shopping-cart ml-2"></i>
+               Panier
+            </a>
+         </div>
       </div>
    </div>
 </div>
