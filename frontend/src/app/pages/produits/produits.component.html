@@ -1,0 +1,19 @@
+<div class="w-[600px] mx-auto flex items-center justify-center">
+   <div
+      class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex items-center gap-3 overflow-x-auto"
+   >
+      <button
+         *ngFor="let category of categories"
+         (click)="selectCategory(category)"
+         [ngClass]="[
+            'px-5 py-2.5 text-sm font-medium rounded-xl whitespace-nowrap transition-colors duration-200',
+            category === getCurrentCategory()
+               ? 'bg-slate-900 text-white'
+               : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+         ]"
+      >
+         {{ category }}
+      </button>
+   </div>
+</div>
+<app-product [currentCategory]="getCurrentCategory()"></app-product>
