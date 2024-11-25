@@ -1,6 +1,6 @@
 import pool from "./connexion.js"
 
-const createTableString = `CREATE TABLE product (
+const productTable = `CREATE TABLE product (
     id INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL, 
     image TEXT NOT NULL, 
@@ -9,9 +9,18 @@ const createTableString = `CREATE TABLE product (
     category VARCHAR(100) NOT NULL
 )`
 
+const usersTable = `CREATE TABLE users (
+    id INT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL, 
+    password VARCHAR(255) NOT NULL,
+    isAdmin BOOLEAN DEFAULT false
+)`
+
 const main = async () => {
    try {
-      await pool.query(createTableString)
+      await pool.query(productTable)
+      console.log("Table created successfully.")
+      await pool.query(usersTable)
       console.log("Table created successfully.")
    } catch (err) {
       console.log("Error creating table:", err)

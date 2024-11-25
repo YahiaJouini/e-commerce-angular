@@ -1,6 +1,7 @@
 import cors from "cors"
 import express from "express"
-import { productRoutes } from "./routes/product-routes"
+import { productRoutes } from "./routes/products"
+import { userRoutes } from "./routes/users"
 
 const app = express()
 
@@ -10,7 +11,9 @@ app.use(cors())
 app.use(express.json())
 
 const port = 3000
+
 productRoutes(app)
+userRoutes(app)
 
 app.listen(port, () => {
    console.log(`[server]: Server is running at http://localhost:${port}`)
