@@ -1,0 +1,55 @@
+<div class="w-full mx-auto max-w-md bg-slate-700 rounded-lg shadow-md p-6">
+   <h1 class="text-3xl font-bold text-center text-indigo-400 mb-6">
+      Contactez-nous
+   </h1>
+   <form>
+      <div class="mb-4">
+         <label for="name" class="block text-gray-300 font-medium mb-2">
+            Nom
+         </label>
+         <input
+            type="text"
+            id="name"
+            placeholder="Entrez votre nom"
+            class="w-full px-4 py-2 rounded-lg bg-slate-800 text-gray-300 border border-slate-600 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+         />
+      </div>
+
+      <div class="mb-4">
+         <label for="email" class="block text-gray-300 font-medium mb-2">
+            Email
+         </label>
+         <input
+            type="email"
+            id="email"
+            placeholder="Entrez votre email"
+            class="w-full px-4 py-2 rounded-lg bg-slate-800 text-gray-300 border border-slate-600 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+         />
+      </div>
+
+      <div class="mb-6">
+         <label for="message" class="block text-gray-300 font-medium mb-2">
+            Message
+         </label>
+         <textarea
+            id="message"
+            rows="4"
+            placeholder="Écrivez votre message ici..."
+            class="w-full px-4 py-2 rounded-lg bg-slate-800 text-gray-300 border border-slate-600 focus:ring-2 focus:ring-indigo-400 focus:outline-none resize-none"
+         ></textarea>
+      </div>
+
+      <button
+         type="submit"
+         class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 rounded-lg transition duration-200"
+      >
+         Envoyer
+      </button>
+   </form>
+   <p class="mt-4 text-gray-400 text-sm text-center">
+      Vous avez une question urgente ?
+      <a href="/faq" class="text-indigo-400 hover:underline"
+         >Consultez notre FAQ</a
+      >
+   </p>
+</div>

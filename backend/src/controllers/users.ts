@@ -23,12 +23,28 @@ export const getUsers = async (_: Request, res: Response) => {
 
 export const addUser = async (req: Request, res: Response) => {
    try {
-      const { email, name, password } = req.body
+      const { email, password } = req.body
 
-      const query = `insert into users values (?, ?, ?,?)`
-      await pool.query(query, [email, name, password, false])
+      const query = `INSERT INTO users (email, password, isAdmin) VALUES ( ?, ?, ?)`
+      await pool.query(query, [email, password, false])
       res.json({ message: "User added successfully" })
    } catch (err: any) {
       res.status(500).json({ message: `Failed to add user ${err?.message}` })
+   }
+}
+export const login = async (req: Request, res: Response) => {
+   try {
+      const { email, password } = req.body
+      const query = `select * from users where email = ? and password = ?`
+      const [res2] = await pool.query<User[]>(query, [email, password])
+
+      console.log(res2)
+      if (!res2[0]) {
+         res.status(401).json({ message: "Invalid email or password" })
+         return
+      }
+      res.json({ message: "Login successful" })
+   } catch (err) {
+      console.log(err)
    }
 }

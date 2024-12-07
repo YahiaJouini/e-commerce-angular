@@ -25,17 +25,44 @@
             </div>
          </div>
 
+         <div>
+            <input
+               type="text"
+               class="bg-white rounded-md px-2 w-64 h-7 text-black outline-none"
+               placeholder="Rechercher..."
+               (input)="search($event)"
+            />
+         </div>
+
          <div class="align-y">
-            <a routerLink="/login" routerLinkActive="text-white" class="link">
-               Se connecter
-            </a>
-            <a
-               routerLink="/register"
-               routerLinkActive="bg-blue-700"
-               class="link"
-            >
-               S'inscrire
-            </a>
+            <ng-container *ngIf="!isAuthenticated; else userLoggedIn">
+               <a
+                  routerLink="/login"
+                  routerLinkActive="text-white"
+                  class="link"
+               >
+                  Se connecter
+               </a>
+               <a
+                  routerLink="/register"
+                  routerLinkActive="bg-blue-700"
+                  class="link"
+               >
+                  S'inscrire
+               </a>
+            </ng-container>
+
+            <ng-template #userLoggedIn>
+               <span class="text-white mr-4">Bienvenue, {{ userName }}</span>
+               <a
+                  href="javascript:void(0)"
+                  (click)="logout()"
+                  class="link text-red-400"
+               >
+                  Déconnexion
+               </a>
+            </ng-template>
+
             <a
                routerLink="/cart"
                routerLinkActive="text-white"

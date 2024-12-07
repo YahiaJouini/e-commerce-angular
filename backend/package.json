@@ -10,7 +10,7 @@
       "lint": "eslint",
       "create-tables": "node config/createTables.js",
       "insert-products": "node config/insertProducts.js"
-   },
+   }, 
    "author": "",
    "license": "ISC",
    "dependencies": {
